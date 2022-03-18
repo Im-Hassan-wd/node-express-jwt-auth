@@ -3,11 +3,13 @@ const User = require('../models/User');
 // handle Errors
 const handleErrors = (err) => {
   console.log(err.message, err.code);
-  let error = { email: '', password: '' };
+  let errors = { email: '', password: '' };
 
   // validation errors
   if (err.message.includes('user validation failed')) {
-    console.log(Object.values(err.errors));
+    Object.values(err.errors).forEach(({properties}) => {
+      errors[properties.path] = properties.message;
+    });
   }
 }
 
