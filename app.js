@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
+const Uri = require('./dbURI/Uri')
 
 const app = express();
 
@@ -12,9 +13,9 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 
 // database connection
-const dbURI = 'mongodb+srv://weird:test123@learningnode.meubb.mongodb.net/node-auth';
+const dbURI = Uri;
 mongoose.connect(dbURI)
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(3001))
   .catch((err) => console.log(err));
 
 // routes
