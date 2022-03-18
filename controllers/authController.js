@@ -10,6 +10,8 @@ const handleErrors = (err) => {
     Object.values(err.errors).forEach(({properties}) => {
       errors[properties.path] = properties.message;
     });
+
+    return errors;
   }
 }
 
@@ -30,7 +32,7 @@ module.exports.signup_post = async (req, res) => {
   }
   catch(err) {
     const errors = handleErrors(err);
-    res.status(400).send('error, user not created')
+    res.status(400).json({ errors });
   }
 }
 
