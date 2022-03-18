@@ -7,7 +7,7 @@ const userScheme = new mongoose.Schema({
     required: [true, 'Please enter an email'],
     unique: true,
     lowercase: true,
-    validate: [isEmail, 'Please anter a valid email']
+    validate: [isEmail, 'Please enter a valid email']
   },
   password: {
     type: String, 
