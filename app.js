@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const authRoutes = require('./routes/authRoutes')
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
 // middleware
 app.use(express.static('public'));
+app.use(express.json());
 
 // view engine
 app.set('view engine', 'ejs');
@@ -13,7 +14,7 @@ app.set('view engine', 'ejs');
 // database connection
 const dbURI = 'mongodb+srv://weird:test123@learningnode.meubb.mongodb.net/node-auth';
 mongoose.connect(dbURI)
-  .then((result) => app.listen(4002))
+  .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
 
 // routes
