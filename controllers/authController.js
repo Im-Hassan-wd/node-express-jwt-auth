@@ -1,6 +1,6 @@
 const User = require('../models/User');
 
-module.exports.signup_get = (req, res) => {
+module.exports.signup_get = async (req, res) => {
   res.render('signup');
 }
 
@@ -13,6 +13,7 @@ module.exports.signup_post = async (req, res) => {
 
   try {
     const user = await User.create({ email, password });
+    res.status(201).json(user);
   }
   catch(err) {
     
