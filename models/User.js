@@ -11,13 +11,7 @@ const userScheme = new mongoose.Schema({
     type: String, 
     required: true, 
     minlength: 6
-  },
-  display_name: {
-    type: String,
-    required: true,
-    unique: true,
-    lowercase: true
-  },
+  }
 });
 
 const User = mongoose.model('user', userScheme);
