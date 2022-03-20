@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { isEmail } = require('validator');
 
-const userScheme = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, 'Please enter an email'],
@@ -16,6 +16,12 @@ const userScheme = new mongoose.Schema({
   }
 });
 
-const User = mongoose.model('user', userScheme);
+// fire a function before doc saved to db
+userSchema.post('save', function (doc, next) {
+  console.log('new user was created and saved', doc)
+  next();
+});
+
+const User = mongoose.model('user', userSchema);
 
 module.exports = User;
