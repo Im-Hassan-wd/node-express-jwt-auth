@@ -4,17 +4,17 @@
   <h2>Sign up</h2>
   <label for="email">Email</label>
   <input type="text" name="email" required />
-  <div class="email-error"></div>
+  <div class="email error"></div>
   <label for="password">Password</label>
   <input type="password" name="password" required />
-  <div class="password-error"></div>
+  <div class="password error"></div>
   <button>Sign up</button>
 </form>
 
 <script>
   const form = document.querySelector('form');
-  const emailError = document.querySelector('.email-error');
-  const passwordError = document.querySelector('.password-error');
+  const emailError = document.querySelector('.email.error');
+  const passwordError = document.querySelector('.password.error');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
