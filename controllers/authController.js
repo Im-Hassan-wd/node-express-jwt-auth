@@ -6,6 +6,16 @@ const handleErrors = (err) => {
   console.log(err.message, err.code);
   let errors = { email: '', password: '' };
 
+  // incorrect email
+  if(err.message === 'incorrect email') {
+    errors.email = 'that email does not exist';
+  }
+
+  // incorrect password
+  if(err.message === 'incorrect password') {
+    errors.password = 'that password does not correct';
+  }
+
   // duplicate error code
   if(err.code === 11000) {
     errors.email = 'that email already exist';
@@ -65,6 +75,6 @@ module.exports.login_post = async (req, res) => {
   } 
   catch (err) {
     const errors = handleErrors(err);
-    res.status(400).json({});
+    res.status(400).json({ errors });
   }
 }
