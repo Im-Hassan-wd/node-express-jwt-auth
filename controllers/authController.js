@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
 
 // handle Errors
 const handleErrors = (err) => {
@@ -19,6 +20,15 @@ const handleErrors = (err) => {
 
     return errors;
   }
+}
+
+// expiry
+const expiry = 3 * 24 * 60 * 60;
+// token
+const createToken = (id) => {
+  return jwt.sign({ id }, 'weird warwick secret', {
+    expiresIn: expiry
+  });
 }
 
 module.exports.signup_get = async (req, res) => {
