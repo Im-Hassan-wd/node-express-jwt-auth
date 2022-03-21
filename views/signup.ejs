@@ -19,6 +19,10 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // reset errors
+    emailError.textContent = '';
+    passwordError.textContent = '';
+
     // get the values
     const email = form.email.value;
     const password = form.password.value;
@@ -30,10 +34,12 @@
         headers: { 'Content-Type': 'application/json'}
       });
       const data = await res.json();
-      console.log(data); 
       if(data.errors) {
         emailError.textContent = data.errors.email;
         passwordError.textContent = data.errors.password;
+      }
+      if(data.user){
+        location.assign('/');
       }
     }
     catch(err) {
