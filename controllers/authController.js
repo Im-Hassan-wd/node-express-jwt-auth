@@ -9,11 +9,13 @@ const handleErrors = (err) => {
   // incorrect email
   if(err.message === 'incorrect email') {
     errors.email = 'that email does not exist';
+    return errors;
   }
 
   // incorrect password
   if(err.message === 'incorrect password') {
-    errors.password = 'that password does not correct';
+    errors.password = 'that password is not correct';
+    return errors;
   }
 
   // duplicate error code
