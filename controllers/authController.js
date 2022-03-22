@@ -81,3 +81,7 @@ module.exports.login_post = async (req, res) => {
     console.log({ errors })
   }
 }
+
+module.exports.logout_get = (req, res) => {
+  
+}
