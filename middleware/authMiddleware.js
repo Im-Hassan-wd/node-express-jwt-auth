@@ -19,3 +19,5 @@ const requireAuth = (req, res, next) => {
    res.redirect('/login');
   }
 }
+
+module.exports = { requireAuth };
