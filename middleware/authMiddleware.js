@@ -29,6 +29,7 @@ const checkUser = (req, res, next) => {
     jwt.verify(token, 'weird warwick secret', async (err, decodedToken) => {
       if (err) {
         console.log(err.message);
+        res.locals.user = null;
         next();
       } else {
         console.log(decodedToken);
@@ -38,6 +39,10 @@ const checkUser = (req, res, next) => {
       }
     });
   }
+  else {
+    res.locals.user = null;
+    next();
+  }
 }
 
-module.exports = { requireAuth };
+module.exports = { requireAuth, checkUser };
