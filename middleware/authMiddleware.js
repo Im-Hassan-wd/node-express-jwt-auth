@@ -26,13 +26,14 @@ const checkUser = (req, res, next) => {
   const token = req.cookies.jwt;
 
   if (token) {
-    jwt.verify(token, 'weird warwick secret', (err, decodedToken) => {
+    jwt.verify(token, 'weird warwick secret', async (err, decodedToken) => {
       if (err) {
         console.log(err.message);
         next();
       } else {
         console.log(decodedToken);
-        let user = await User.findById(decodedToken.id)
+        let user = await User.findById(decodedToken.id);
+        res.locals.user = user;
         next();
       }
     });
