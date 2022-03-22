@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const Uri = require('./dbURI/Uri');
 const cookieParser = require('cookie-parser');
-const requireAuth = require('./middleware/authMiddleware');
+const { requireAuth } = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 // database connection
 const dbURI = Uri;
 mongoose.connect(dbURI)
-  .then((result) => app.listen(3001))
+  .then((result) => app.listen(4000))
   .catch((err) => console.log(err));
 
 // routes
