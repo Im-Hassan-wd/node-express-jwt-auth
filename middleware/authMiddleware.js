@@ -5,7 +5,15 @@ const requireAuth = (req, res, next) => {
 
   // check json web token exits & is verified
   if (token) {
-    jwt.verify(token, 'weird warwick secret')
+    jwt.verify(token, 'weird warwick secret', (err, decodedToken) => {
+      if (err) {
+        console.log(err.message);
+        res.redirect('/login');
+      } else {
+        console.log(decodedToken)
+        next();
+      }
+    });
   }
   else {
    res.redirect('/login');
