@@ -26,3 +26,7 @@ app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
 app.get('/smoothies', requireAuth, (req, res) => res.render('smoothies'));
 app.use(authRoutes);
+// 404
+app.use((req, res) => {
+  res.status(404).render('404');
+});
