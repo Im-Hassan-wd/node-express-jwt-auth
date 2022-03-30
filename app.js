@@ -18,7 +18,10 @@ app.set('view engine', 'ejs');
 // database connection
 const dbURI = Uri;
 mongoose.connect(dbURI)
-  .then((result) => app.listen(4000))
+  .then((result) => {
+    app.listen(4000);
+    console.log('connected to db')
+  })
   .catch((err) => console.log(err));
 
 // routes
