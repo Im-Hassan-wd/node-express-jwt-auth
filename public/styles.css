@@ -25,6 +25,9 @@ footer {
   font-family: "Quicksand", sans-serif;
   color: #444;
 }
+h1 {
+  font-size: 1rem;
+}
 ul {
   list-style-type: none;
 }
@@ -34,7 +37,7 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 120px;
 }
 nav ul {
