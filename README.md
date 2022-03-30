@@ -22,7 +22,7 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://raw.githubusercontent.com/Im-Hassan-wd/node-express-jwt-auth/6301c0736150c6f47ae1cc91772fbd44752699cc/public/ninja_coffee%20(720p)%201.gif)
 
 ### Built With
 
