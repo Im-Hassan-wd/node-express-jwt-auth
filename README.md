@@ -16,6 +16,7 @@
 - [Overview](#overview)
 - [Built With](#built-with)
 - [Features](#features)
+- [Getting Started](#getting-started)
 
 <!-- OVERVIEW -->
 
