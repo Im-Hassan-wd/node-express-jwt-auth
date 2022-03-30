@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const app = express();
+app.listen(4000)
 
 // middleware
 app.use(express.static('public'));
@@ -18,13 +19,13 @@ app.set('view engine', 'ejs');
 // database connection
 const dbURI = Uri;
 mongoose.connect(dbURI)
-  .then((result) => app.listen(4000))
+  .then((result) => console.log('connected to db'))
   .catch((err) => console.log(err));
 
 // routes
 app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
-app.get('/coffee', requireAuth, (req, res) => res.render('coffee'));
+app.get('/coffee', (req, res) => res.render('coffee'));
 app.use(authRoutes);
 // 404
 app.use((req, res) => res.status(404).render('404'));
