@@ -36,10 +36,6 @@
 
 ## Features
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
-###### You can:
-
 - you can created account
 - user login
 - user logout
