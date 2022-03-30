@@ -45,19 +45,22 @@ Topics
 
 ## Features
 
-- you can created account
-- user login
-- user logout
-- view recipes
+- you can create an account
+- you can see the login view and the signup view
+- user can login and logout
+- only authenticated users can see coffee recipes
+-
 
 ## Getting started
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
-# install all dependencies and get the node_modules folder
+# Clone this repository
+$ git clone https://github.com/your-user-name/your-project-name
 
-npm install
+# install dependencies
+$ npm install
 
 
 # Connect to MongoDB database
