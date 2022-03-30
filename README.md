@@ -46,9 +46,9 @@
 
 ## Getting started
 
-To start using this app you must have node install
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-```
+```bash
 # install all dependencies and get the node_modules folder
 
 npm install
@@ -61,15 +61,9 @@ npm install
 - go to the app.js file and past your connection string beneath the connect to db comment
 
 
-# serve up node js app. It listens on localhost:4001
+# serve up node js app
+$ node app || $ nodemon app
 
-node app
-
-- or use nodemon if you have it installed
-- how to install nodemon
-
-npm install nodemon -g
-
-# serve up node js app. It listens on localhost:4001
-nodemon app
+# in your browser
+localhost:4000
 ```
